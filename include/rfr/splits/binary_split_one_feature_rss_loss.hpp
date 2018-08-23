@@ -228,7 +228,7 @@ class binary_split_one_feature_rss_loss: public rfr::splits::k_ary_split_base<2,
 			if (loss < best_loss){
 				std::uniform_real_distribution<num_t> dist(0.0,1.0);
 				best_loss = loss;
-				split_value = psv + dist(rng)*((*it).feature - psv);
+				split_value = psv + 0.5*((*it).feature - psv);
 			}
 		}
 		return(best_loss);
